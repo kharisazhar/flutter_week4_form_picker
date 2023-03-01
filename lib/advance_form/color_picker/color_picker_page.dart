@@ -10,9 +10,9 @@ class ColorPickerPage extends StatefulWidget {
 
 class _ColorPickerPageState extends State<ColorPickerPage> {
   // create some values
-  Color pickerColor = Color(0xff443a49);
+  Color pickerColor = const Color(0xff443a49);
 
-  Color currentColor = Color(0xff443a49);
+  Color currentColor = const Color(0xff443a49);
 
   // ValueChanged<Color> callback
   // void changeColor(Color color) {
