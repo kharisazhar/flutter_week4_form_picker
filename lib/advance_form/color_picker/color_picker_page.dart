@@ -65,7 +65,12 @@ class _ColorPickerPageState extends State<ColorPickerPage> {
                       );
                     });
               },
-              child: const Text(" Select color here "))
+              child: const Text(" Select color here ")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, pickerColor);
+              },
+              child: const Text("SAVE"))
         ],
       )),
     );

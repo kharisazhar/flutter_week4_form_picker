@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String? fileResult;
+  Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +44,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     MaterialPageRoute(builder: (_) => const DatePickerPage())),
                 title: const Text('Date Picker')),
             ListTile(
-                onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const ColorPickerPage())),
+                onTap: () => Navigator.of(context)
+                        .push(MaterialPageRoute<Color>(
+                            builder: (_) => const ColorPickerPage()))
+                        .then((value) {
+                      color = value ?? Colors.red;
+                      setState(() {});
+                    }),
                 title: const Text('Color Picker')),
+            Container(
+              width: 200,
+              height: 200,
+              color: color ?? Colors.red,
+            )
           ],
         ),
       ),
